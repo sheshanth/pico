@@ -89,7 +89,7 @@ public class JWTUtils {
         return Keys.secretKeyFor(signatureAlgorithm);
     }
 
-    public static Pair<String, String> decodeJWT(String jws, String key) {
+    public static Pair<String, String> decodeJWT(String jws) {
         // Avoid using JJWT parserBuilder to bypass the unresolved API in the current compile setup.
         // We'll split the token and Base64URL-decode the header and payload to return their JSON strings.
         if (jws == null) {
